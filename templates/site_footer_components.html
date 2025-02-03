@@ -1,0 +1,38 @@
+<!--Footer Start-->
+        <footer class="pt-50 pb-50">
+            <div class="container">
+                <div class="row text-center">
+                    {% for link in footer_setting %}
+                        {% if link.value %}
+                            <div class="col-md-3 col-sm-6">
+                            <!--Contant Item-->
+                                <div class="contact-info">
+                                    <h5>{{ link.title}}</h5>
+                                    <a href="{{ link.value }}">{{ link.value_title }}</a>
+                                </div>
+                            </div>
+                        {% elif link.value is None and link.value_title %}
+                            <div class="col-md-3 col-sm-6">
+                            <!--Contant Item-->
+                                <div class="contact-info">
+                                    <h5>{{ link.title}}</h5>
+                                    <p>{{ link.value_title }}</p>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <hr>
+                        {% for copy in footer_setting %}
+                            {% if copy.copyright %}
+                                <p class="copy pt-30">
+                                    {{ copy.copyright|safe }} 
+                                </p>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </footer>

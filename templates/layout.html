@@ -1,0 +1,23 @@
+{% load render_partial %}
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="Personal, Portfolio, Creative">
+        <meta name="description" content="Kalvin Portfolio Template">
+        <meta name="author" content="cosmos-themes">
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        {% include 'site_header_references.html' %}
+    </head>
+<body>
+    {% render_partial 'Home_module.views.site_header_components' %}
+    {% block content %}{% endblock %}
+    {% render_partial 'Home_module.views.site_footer_components' %}
+    {% include 'site_footer_references.html' %}
+</body>
+</html>
